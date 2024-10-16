@@ -4,7 +4,7 @@ docker stop rbt-tileserver-gl
 docker rm rbt-tileserver-gl
 
 docker run -d \
-	--name rbt-tileserver-gl \
+	--name rbt-tileserver-gl-02 \
 	--restart=always \
 	--ipc=host \
 	--ulimit memlock=-1 \
@@ -14,7 +14,7 @@ docker run -d \
 	-v $(pwd)/data:/data \
 	-v $(pwd)/styles:/styles \
 	-v $(pwd)/config:/config \
-	-p 0.0.0.0:8080:8080 \
+	-p 0.0.0.0:7877:8080 \
 	docker.io/mjj203/rbt:tileservergl-3395-latest \
 	--verbose \
 	--config /config/config.json
